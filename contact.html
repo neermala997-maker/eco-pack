@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="./Images/logo.jpg" type="image/x-icon">
+
+    <link rel="stylesheet" href="./CSS/contact.css" />
+    <title>Eco-Pack</title>
+  </head>
+  <body>
+  <!-- NAVBAR START -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html"><img src="./Images/logo.jpg" alt="Eco-Pack Logo"></a>
+      </div>
+
+      <div class="nav-menu-wrapper" id="navMenuWrapper">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar-search mobile-search">
+          <form id="searchFormMobile" role="search">
+            <input type="search" id="searchInputMobile" placeholder="Search eco products..." aria-label="Search products">
+            <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="navbar-right-actions">
+        <div class="navbar-search desktop-search">
+          <form id="searchFormDesktop" role="search">
+            <input type="search" id="searchInputDesktop" placeholder="Search eco products..." aria-label="Search products">
+            <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <a href="gallerycart.html" class="cart-icon-btn" aria-label="Shopping Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+
+      <button type="button" class="navbar-toggler" id="navbarToggler" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="navMenuWrapper">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  <!-- NAVBAR END -->
+
+    <!-- contact start  -->
+
+    <main>
+      <!-- First section: Contact introduction -->
+      <section class="hero-contact">
+        <div class="text">
+          <h1><span class="green-text">GET-IN  </span>TOUCH</h1>
+          <!-- <h3>GET IN TOUCH</h3> -->
+
+          <p>
+            Want to get in touch? We'd love to hear from you.
+            <br />
+            Here's how you can reach us.....
+          </p>
+
+          <!-- Phone and social media apps -->
+          <div class="phone-container">
+            <img
+              class="phone"
+              src="./Images/phone contact.png"
+              alt="Smartphone"
+            />
+
+            <div class="app facebook">f</div>
+            <div class="app instagram">◎</div>
+            <div class="app youtube">▶️</div>
+            <div class="app whatsapp">☎️</div>
+            <div class="app tiktok">♪</div>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="./Images/contact-group.jpg" alt="Our group" />
+        </div>
+        
+      </section>
+
+      <!-- Second section: Contact form -->
+      <section class="contact-section">
+        <div class="contact-form">
+          <h2>Contact Us</h2>
+
+          <div class="form-group">
+            <label for="name" style="text-align: left;">
+              <i class="fa-solid fa-circle-user" style="text-align: left;"></i> Name
+            </label>
+            <input type="text" id="name" placeholder="Your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email"  style="text-align: left;">
+              <i class="fa-solid fa-envelope"  style="text-align: left;"></i> Email
+            </label>
+            <input type="email" id="email" placeholder="Your email" />
+          </div>
+
+          <div class="form-group">
+            <label for="message"  style="text-align: left;">
+              <i class="fa-solid fa-spa"  style="text-align: left;"></i> Message
+            </label>
+            <textarea
+              id="message"
+              placeholder="Your message"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <button class="btn" onclick="openpopup()">Send Message</button>
+        </div>
+
+        <!-- Google Map -->
+        <div class="location-box">
+          <h3>
+            <i class="fa-solid fa-location-dot"></i>
+            Our Location
+          </h3>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3546.5194847745584!2d91.51224997403388!3d27.26559584483919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375c0d965ae8d8a5%3A0x732536244eca2b04!2sDe-Suung%20Skilling%20Programme%20Centre%2C%20Yonphula!5e0!3m2!1sen!2sbt!4v1791049237395!5m2!1sen!2sbt"
+            title="Our location on Google Maps"
+            loading="lazy"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </section>
+
+      <!-- Dark background for popup -->
+      <div class="overlay" id="overlay" onclick="closepopup()"></div>
+
+      <!-- Success popup -->
+      <div class="popup" id="popup">
+        <img
+          src="./Images/Green Circle Checkmark Icon.png"
+          alt="Success"
+          class="tick-image"
+        />
+
+        <h2>Thank You!</h2>
+
+        <p>Your message has been sent successfully!</p>
+
+        <button type="button" onclick="closepopup()">OK</button>
+      </div>
+    </main>
+
+    <!-- contact end  -->
+
+    
+<!-- chatbot --> 
+  <!-- Services Section -->
+  <section class="service-section">
+
+    <div class="service-icon">
+      <i class="fa-solid fa-seedling"></i>
+    </div>
+
+    <p class="subtitle">MAKE YOUR BUSINESS GREENER</p>
+
+    <h2>Looking for the Right Packaging?</h2>
+
+    <p>
+      Explore our services and find packaging solutions that suit
+      your business needs.
+    </p>
+
+    <!-- <a href="service.html" class="service-btn">
+      Explore Our Services
+      <i class="fa-solid fa-arrow-right"></i>
+    </a> -->
+
+  </section>
+    
+    
+      <!-- ECO-PACK CHATBOT BUTTON -->
+      <button
+        id="chatbotButton"
+        onclick="toggleChat()"
+        aria-label="Open Eco-Pack chatbot"
+      >
+        <img src="./Images/logo.jpg" alt="Eco-Pack Logo" id="chatbotLogo" />
+        <span id="closeIcon">×</span>
+      </button>
+
+      <!-- CHATBOT WINDOW -->
+      <div id="chat">
+        <div id="chatTop">
+          <img src="./Images/logo.jpg" alt="Eco-Pack" />
+          <div>
+            <h3>Eco-Pack Assistant</h3>
+            <p>Eco-friendly packaging assistant</p>
+          </div>
+        </div>
+
+        <div id="messages">
+          <p class="botMessage">🤖 Hello! Welcome to Eco-Pack.</p>
+          <p class="botMessage">🤖 How can I help you today?</p>
+
+          <button class="chatOption" onclick="reply('custom')">
+            Custom Packaging
+          </button>
+          <button class="chatOption" onclick="reply('event')">
+            Event Packaging
+          </button>
+          <button class="chatOption" onclick="reply('price')">Pricing</button>
+          <button class="chatOption" onclick="reply('order')">
+            Order Help
+          </button>
+        </div>
+
+        <div id="chatBottom">
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="Type your message..."
+            aria-label="Type your message"
+          />
+          <button
+            id="chatSend"
+            onclick="sendChatMessage()"
+            aria-label="Send message"
+          >
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+<!-- end -->
+
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo and Description -->
+        <div class="footer-box">
+          <h2 class="footer-logo">Eco-<span>Pack</span> 🌿</h2>
+
+          <p>
+            Small changes in packaging can create a big difference. We help
+            businesses in Bhutan find eco-friendly packaging for a greener
+            future.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Services -->
+        <div class="footer-box">
+          <h3>Our Services</h3>
+
+          <ul>
+            <li><a href="service.html">Eco Packaging</a></li>
+            <li><a href="service.html">Custom Packaging</a></li>
+            <li><a href="service.html">Gift Packaging</a></li>
+            <li><a href="service.html">Restaurant Packaging</a></li>
+            <li><a href="service.html">Bakery Packaging</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-box" id = "contaact-boxx">
+          <h3>Contact Us</h3>
+
+          <p>Bhutan</p>
+          <p>Let's make packaging greener!</p>
+
+          <a href="contact.html" class="footer-btn"> Get in Touch → </a>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Eco-Pack | Protect Nature, Pack Sustainably.</p>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+
+     <!-- js start  -->
+
+    <!-- CART SCRIPT -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("cart-items-container");
+        const cart = JSON.parse(localStorage.getItem("ecoPackCart")) || [];
+
+        // Update badge on load
+        const badge = document.querySelector(".cart-badge");
+        if (badge) {
+          badge.textContent = cart.length;
+        }
+
+        if (cart.length === 0) {
+          container.innerHTML = "<p>Your cart is empty.</p>";
+          return;
+        }
+
+        let html = "<ul style='list-style: none; padding: 0;'>";
+        cart.forEach((item, index) => {
+          html += `
+            <li style="background: #f9f9f9; border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px;">
+                <strong>Request #${index + 1}: ${item.product}</strong><br>
+                Full Name: ${item.fullName}<br>
+                Business: ${item.businessName}<br>
+                Quantity: ${item.quantity}<br>
+                Preferred Date: ${item.preferredDate}<br>
+                Requirements: ${item.requirements}
+            </li>
+          `;
+        });
+        html += "</ul>";
+        container.innerHTML = html;
+
+        // Clear cart functionality
+        const clearBtn = document.getElementById("clear-cart");
+        if (clearBtn) {
+          clearBtn.addEventListener("click", function () {
+            localStorage.removeItem("ecoPackCart");
+            location.reload();
+          });
+        }
+      });
+    </script>
+      <!-- js end  -->
+     <script src="./JS/contact.js"></script>
+            <!-- <script src="./JS/shop.js"></script> -->
+
+  </body>
+</html>

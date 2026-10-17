@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+/* Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Firefox and other browsers */
+html {
+    scrollbar-width: none;
+}
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f3f6ed;
+  color: #203c29;
+  /* overflow: hidden; */
+}
+
+/* NAVBAR CONTAINER & LAYOUT*/
+.navbar {
+  background-color: #2b743c;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 8px 5%;
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo slightly shifted to the right */
+.navbar-logo {
+  /* margin-left: 15px; */
+  flex-shrink: 0;
+  margin: 0;
+  /* gap: 50px; */
+}
+
+.navbar-logo img {
+  display: block;
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
+}
+
+/* NAV LINKS (CENTERED) */
+.nav-menu-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 22px;
+  padding: 0;
+  margin: 0;
+}
+.nav-links li {
+  margin: 0;
+  padding: 0;
+}
+.navbar .nav-links a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 4px;
+  transition: color 0.3s ease;
+
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #d9f99d;
+}
+
+/* RIGHT SIDE ACTIONS (SEARCH + CART) */
+.navbar-right-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+/* SEARCH BAR STYLING */
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-search form {
+  display: flex;
+  align-items: center;
+  background: #f1f3f5;
+  border: 1px solid #dee2e6;
+  border-radius: 50px;
+  padding: 5px 12px;
+  margin: 0;
+  transition: box-shadow 0.3s ease;
+}
+
+.desktop-search form:focus-within {
+  background: #ffffff;
+  border-color: #27ae60;
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
+}
+
+.desktop-search input,
+.mobile-search input {
+  width: 150px;
+  max-width: 100%;
+  min-width: 0;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333333;
+  font-size: 14px;
+
+}
+
+.desktop-search input:focus {
+  width: 180px;
+}
+
+.desktop-search button,
+.mobile-search button {
+  background: transparent;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.desktop-search button:hover,
+.mobile-search button:hover {
+  color: #27ae60;
+}
+
+/* SHOPPING CART ICON BUTTON */
+.cart-icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: #ffffff;
+  font-size: 21px;
+  text-decoration: none;
+}
+
+.cart-icon-btn:hover {
+  color: #d9f99d;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  min-width: 16px;
+  text-align: center;
+  background: #e53935;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 4px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+/* MOBILE SEARCH (hidden on desktop) */
+.mobile-search {
+  display: none;
+}
+
+.mobile-search form {
+  display: flex;
+  align-items: center;
+  background: #f1f3f5;
+  border-radius: 5px;
+  padding: 8px 12px;
+  width: 100%;
+  border: 1px solid #dee2e6;
+}
+
+.mobile-search input {
+  width: 100%;
+}
+
+/* MOBILE TOGGLER BUTTON */
+.navbar-toggler {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 8px;
+
+}
+
+/* SEARCH BAR STYLING */
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-search form {
+  display: flex;
+  align-items: center;
+  background: #f1f3f5;
+  border-radius: 50px;
+  padding: 5px 15px;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.desktop-search form:focus-within {
+  border-color: #27ae60;
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
+  background: #fff;
+}
+
+.desktop-search input,
+.mobile-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 5px;
+  font-size: 0.9rem;
+  width: 180px;
+  color: #333;
+  transition: width 0.3s ease;
+}
+
+.desktop-search input:focus {
+  width: 230px;
+}
+
+.desktop-search button,
+.mobile-search button {
+  background: transparent;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.desktop-search button:hover,
+.mobile-search button:hover {
+  color: #27ae60;
+}
+
+/* MOBILE SEARCH (hidden on desktop) */
+.mobile-search {
+  display: none;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.mobile-search form {
+  display: flex;
+  align-items: center;
+  background: #f1f3f5;
+  border-radius: 5px;
+  padding: 8px 12px;
+  width: 100%;
+  border: 1px solid #dee2e6;
+}
+
+.mobile-search input {
+  width: 100%;
+}
+
+/* MOBILE TOGGLER BUTTON */
+.navbar-toggler {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  color: aliceblue;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: chocolate;
+}
+
+/* end of navbar  */

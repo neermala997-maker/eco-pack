@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Pack | Pack Gallery</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="./Images/logo.jpg" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <!-- Logo -->
+        <div class="navbar-logo">
+          <a href="index.html">
+            <img src="./Images/logo.jpg" alt="Eco-Pack Logo" />
+          </a>
+        </div>
+
+        <!-- Nav Links (Center) & Mobile Menu Wrapper -->
+        <div class="nav-menu-wrapper" id="navMenuWrapper">
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <!-- <a href="gallery.html">Home</a><a href="gallery.html#gallery">Gallery</a> -->
+            <li><a href="contact.html">Contact</a></li>
+            <!-- <a class="cart-link" href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart <span class="cart-count">0</span></a> -->
+          </ul>
+
+          <!-- Mobile Search (Visible only in mobile dropdown) -->
+          <div class="navbar-search mobile-search">
+            <form
+              id="searchFormMobile"
+              onsubmit="handleSearch(event, 'mobile')"
+            >
+              <input
+                type="text"
+                id="searchInputMobile"
+                placeholder="Search eco products..."
+                aria-label="Search"
+              />
+              <button type="submit"><i class="fa-solid fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Side: Search Bar & Shopping Cart (Desktop) -->
+        <div class="navbar-right-actions">
+          <div class="navbar-search desktop-search">
+            <form
+              id="searchFormDesktop"
+              onsubmit="handleSearch(event, 'desktop')"
+            >
+              <input
+                type="text"
+                id="searchInputDesktop"
+                placeholder="Search eco products..."
+                aria-label="Search"
+              />
+              <button type="submit"><i class="fa-solid fa-search"></i></button>
+            </form>
+          </div>
+
+          <!-- Functional Shopping Cart Icon -->
+          <a href="cart.html" class="cart-icon-btn" aria-label="Shopping Cart">
+            <i
+              class="fa-solid fa-cart-shopping"
+              style="color: rgb(233, 237, 240)"
+            ></i>
+            <span class="cart-badge">0</span>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button
+          class="navbar-toggler"
+          id="navbarToggler"
+          aria-label="Toggle Navigation"
+        >
+          <i class="fa-solid fa-bars" style="color: white"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- NAVBAR END -->
+
+    <main>
+      <header class="gallery-header">
+        <div class="header-content">
+          <span class="header-tag"
+            ><i class="fa-solid fa-leaf"></i> SUSTAINABLE PACKAGING</span
+          >
+          <h1><span class="green-text" style="color: green;">Pack-</span>Gallery</h1>
+          <p>
+            Small changes in the way we pack, use, and reuse our products can
+            create a big change for our communities, our environment, and the
+            future of Bhutan.
+          </p>
+          <a href="#filter-list" class="primary-btn"
+            >Explore Our Collection <i class="fa-solid fa-arrow-down"></i
+          ></a>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+      </header>
+
+      <section class="gallery-section" id="gallery">
+        <div class="section-heading">
+          <span>OUR COLLECTION</span>
+          <h2>Discover Eco-Friendly Packaging</h2>
+          <p>Find sustainable packaging for every occasion.</p>
+        </div>
+
+        <ul id="filter-list">
+          <li class="active" data-group="0">All Products</li>
+          <li data-group="1">Restaurant</li>
+          <li data-group="2">Bakery</li>
+          <li data-group="3">Event</li>
+        </ul>
+
+        <ul id="card-gallery-wrapper">
+          <li data-group="1">
+            <div class="product-image">
+              <img
+                src="./Images/gallery-resturant2.jfif"
+                alt="Restaurant packaging"
+              />
+            </div>
+            <div class="card-content">
+              <span class="category-label">RESTAURANT</span>
+              <h4>Eco-Friendly Restaurant Packaging</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="1">
+            <div class="product-image">
+              <img src="./Images/gallery-resturant1.jfif" alt="Takeaway box" />
+            </div>
+            <div class="card-content">
+              <span class="category-label">RESTAURANT</span>
+              <h4>Restaurant Takeaway Box</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="1">
+            <div class="product-image">
+              <img src="./Images/galleryfood.jfif" alt="Kraft lunch bags" />
+            </div>
+            <div class="card-content">
+              <span class="category-label">RESTAURANT</span>
+              <h4>Kraft Paper Lunch Bags</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="1">
+            <div class="product-image">
+              <img
+                src="./Images/gallery food5.jfif"
+                alt="Bamboo food packaging"
+              />
+            </div>
+            <div class="card-content">
+              <span class="category-label">RESTAURANT</span>
+              <h4>Bamboo Food Packaging</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="2">
+            <div class="product-image">
+              <img src="./Images/gallery=bakery7.jfif" alt="Bakery packaging" />
+            </div>
+            <div class="card-content">
+              <span class="category-label">BAKERY</span>
+              <h4>Bakery Packaging</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="2">
+            <div class="product-image">
+              <img
+                src="./Images/gallery-bakery6.jfif"
+                alt="Bakery containers"
+              />
+            </div>
+            <div class="card-content">
+              <span class="category-label">BAKERY</span>
+              <h4>Bakery Food Containers</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="2">
+            <div class="product-image">
+              <img src="./Images/gallery-bakery4.jfif" alt="Bakery bags" />
+            </div>
+            <div class="card-content">
+              <span class="category-label">BAKERY</span>
+              <h4>Bakery Packaging Bags</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="2">
+            <div class="product-image">
+              <img src="./Images/gallery-bakery3.jfif" alt="Bakery bags" />
+            </div>
+            <div class="card-content">
+              <span class="category-label">BAKERY</span>
+              <h4>Bakery Packaging Bags</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="2">
+            <div class="product-image">
+              <img
+                src="./Images/gallerey-bakery7.jfif"
+                alt="Premium bakery bags"
+              />
+            </div>
+            <div class="card-content">
+              <span class="category-label">BAKERY</span>
+              <h4>Premium Bakery Bags</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="2">
+            <div class="product-image">
+              <img src="./Images/gallery-bakery2.jfif" alt="Eco bakery bags" />
+            </div>
+            <div class="card-content">
+              <span class="category-label">BAKERY</span>
+              <h4>Eco-Friendly Bakery Bags</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="3">
+            <div class="product-image">
+              <img src="./Images/gallery-vent8.jfif" alt="Event packaging" />
+            </div>
+            <div class="card-content">
+              <span class="category-label">EVENT</span>
+              <h4>Event Packaging</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="3">
+            <div class="product-image">
+              <img
+                src="./Images/gallery-event8.jfif"
+                alt="Wedding gift packaging"
+              />
+            </div>
+            <div class="card-content">
+              <span class="category-label">EVENT</span>
+              <h4>Wedding Gift Packaging</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="3">
+            <div class="product-image">
+              <img
+                src="./Images/gallery-event7.jfif"
+                alt="Event gift packaging"
+              />
+            </div>
+            <div class="card-content">
+              <span class="category-label">EVENT</span>
+              <h4>Event Gift Packaging</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="3">
+            <div class="product-image">
+              <img
+                src="./Images/gallery-event6.jfif"
+                alt="Elegant event packaging"
+              />
+            </div>
+            <div class="card-content">
+              <span class="category-label">EVENT</span>
+              <h4>Elegant Event Packaging</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="3">
+            <div class="product-image">
+              <img
+                src="./Images/gallery-event5.jfif"
+                alt="Occasion packaging"
+              />
+            </div>
+            <div class="card-content">
+              <span class="category-label">EVENT</span>
+              <h4>Special Occasion Packaging</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+          <li data-group="3">
+            <div class="product-image">
+              <img
+                src="./Images/gallery-event3.jfif"
+                alt="Celebration gift packaging"
+              />
+            </div>
+            <div class="card-content">
+              <span class="category-label">EVENT</span>
+              <h4>Celebration Gift Packaging</h4>
+              <a class="premium-label" href="premium.html"
+                ><i class="fa-solid fa-crown"></i> PREMIUM OPTIONS</a
+              >
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="service-section">
+        <div class="service-icon"><i class="fa-solid fa-seedling"></i></div>
+        <p class="subtitle">MAKE YOUR BUSINESS GREENER</p>
+        <h2>Looking for the Right Packaging?</h2>
+        <p>
+          Explore our services and find packaging solutions that suit your
+          business needs.
+        </p>
+        <a href="service.html" class="primary-btn"
+          >Explore Our Services <i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </section>
+    </main>
+
+    <!-- chatbot start  -->
+
+    <!-- ECO-PACK CHATBOT BUTTON -->
+    <button
+      id="chatbotButton"
+      onclick="toggleChat()"
+      aria-label="Open Eco-Pack chatbot"
+    >
+      <img src="./Images/logo.jpg" alt="Eco-Pack Logo" id="chatbotLogo" />
+      <span id="closeIcon">×</span>
+    </button>
+
+    <!-- CHATBOT WINDOW -->
+    <div id="chat">
+      <div id="chatTop">
+        <img src="./Images/logo.jpg" alt="Eco-Pack" />
+        <div>
+          <h3>Eco-Pack Assistant</h3>
+          <p>Eco-friendly packaging assistant</p>
+        </div>
+      </div>
+
+      <div id="messages">
+        <p class="botMessage">🤖 Hello! Welcome to Eco-Pack.</p>
+        <p class="botMessage">🤖 How can I help you today?</p>
+
+        <button class="chatOption" onclick="reply('custom')">
+          Custom Packaging
+        </button>
+        <button class="chatOption" onclick="reply('event')">
+          Event Packaging
+        </button>
+        <button class="chatOption" onclick="reply('price')">Pricing</button>
+        <button class="chatOption" onclick="reply('order')">Order Help</button>
+      </div>
+
+      <div id="chatBottom">
+        <input
+          id="chatInput"
+          type="text"
+          placeholder="Type your message..."
+          aria-label="Type your message"
+        />
+        <button
+          id="chatSend"
+          onclick="sendChatMessage()"
+          aria-label="Send message"
+        >
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- chatbot end  -->
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo and Description -->
+        <div class="footer-box">
+          <h2 class="footer-logo">Eco-<span>Pack</span> 🌿</h2>
+
+          <p>
+            Small changes in packaging can create a big difference. We help
+            businesses in Bhutan find eco-friendly packaging for a greener
+            future.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Services -->
+        <div class="footer-box">
+          <h3>Our Services</h3>
+
+          <ul>
+            <li><a href="service.html">Eco Packaging</a></li>
+            <li><a href="service.html">Custom Packaging</a></li>
+            <li><a href="service.html">Gift Packaging</a></li>
+            <li><a href="service.html">Restaurant Packaging</a></li>
+            <li><a href="service.html">Bakery Packaging</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-box" id="contaact-boxx">
+          <h3>Contact Us</h3>
+
+          <p>Bhutan</p>
+          <p>Let's make packaging greener!</p>
+
+          <a href="contact.html" class="footer-btn"> Get in Touch → </a>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Eco-Pack | Protect Nature, Pack Sustainably.</p>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+    <script src="./JS/home.js"></script>
+    <script src="./JS/shop.js"></script>
+    <script src="./JS/premium.js"></script>
+  </body>
+</html>

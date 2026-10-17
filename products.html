@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECO-PACK Products</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/product.css">
+      <link rel="shortcut icon" href="./Images/logo.jpg" type="image/x-icon">
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <img src="./Images/logo.jpg" alt="Eco-Pack Logo">
+        </a>
+      </div>
+
+      <div class="nav-menu-wrapper" id="navMenuWrapper">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="navbar-search mobile-search">
+          <form onsubmit="handleSearch(event, 'mobile')">
+            <input id="searchInputMobile" type="search"
+              placeholder="Search eco products..." aria-label="Search products">
+            <button type="submit" aria-label="Search">
+              <i class="fa-solid fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="navbar-right-actions">
+        <div class="navbar-search desktop-search">
+          <form onsubmit="handleSearch(event, 'desktop')">
+            <input id="searchInputDesktop" type="search"
+              placeholder="Search eco products..." aria-label="Search products">
+            <button type="submit" aria-label="Search">
+              <i class="fa-solid fa-search"></i>
+            </button>
+          </form>
+        </div>
+
+        <a href="cart.html" class="cart-icon-btn" aria-label="Shopping Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+
+      <button class="navbar-toggler" id="navbarToggler"
+        aria-label="Toggle navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars" style="color: white;"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-label">SUSTAINABLE PACKAGING FOR BHUTAN</span>
+      <h1>PACKAGING THAT CARES FOR THE PLANET</h1>
+      <p>Sustainable packaging for Bhutanese businesses and events.</p>
+      <a href="#products" class="main-button">Explore Products</a>
+    </div>
+  </section> -->
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="section-heading">
+      <h2>EXPLORE OUR PACKAGING SOLUTIONS</h2>
+      <p>Discover packaging services that suit your business and needs.</p>
+    </div>
+
+    <div class="categories">
+      <button class="category-btn active" onclick="filterProducts('all', this)">All</button>
+      <button class="category-btn" onclick="filterProducts('custom', this)">Custom Packaging</button>
+      <button class="category-btn" onclick="filterProducts('subscription', this)">Subscription</button>
+      <button class="category-btn" onclick="filterProducts('event', this)">Event Packaging</button>
+      <button class="category-btn" onclick="filterProducts('delivery', this)">Delivery</button>
+      <button class="category-btn" onclick="filterProducts('eco', this)">Eco Packaging</button>
+    </div>
+
+    <div class="search">
+      <input type="search" id="searchInput"
+        placeholder="Search packaging products..."
+        aria-label="Search packaging products">
+      <button onclick="searchProducts()">Search</button>
+    </div>
+
+    <div class="product-container">
+
+      <article class="product-card" data-category="custom">
+        <img src="./Images/customizaiton product.jfif" alt="Custom packaging boxes">
+        <div class="product-info">
+          <span class="product-tag">PERSONALIZED</span>
+          <h3>Custom Packaging</h3>
+          <p>Personalized packaging designed according to your business preferences.</p>
+          <button onclick="showDetails('Custom Packaging','Personalized packaging designed according to your business preferences.','From Nu. 250')">View Details</button>
+          <button class="light-button" onclick="openForm('Custom Packaging')">Customize</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="subscription">
+        <img src="./Images/about-carousel3.jpg" alt="Subscription packaging supplies">
+        <div class="product-info">
+          <span class="product-tag">REGULAR SUPPLY</span>
+          <h3>Packaging Subscription</h3>
+          <p>Receive eco-friendly packaging supplies regularly with a suitable plan.</p>
+          <button onclick="showDetails('Packaging Subscription','Receive packaging supplies regularly with a suitable plan.','From Nu. 800/month')">View Details</button>
+          <button class="light-button" onclick="openForm('Packaging Subscription')">Choose Plan</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="event">
+        <img src="./Images/event product.jfif" alt="Event packaging">
+        <div class="product-info">
+          <span class="product-tag">SPECIAL OCCASIONS</span>
+          <h3>Event Packaging</h3>
+          <p>Sustainable packaging for celebrations, weddings, and special events.</p>
+          <button onclick="showDetails('Event Packaging','Packaging solutions for weddings, parties and special occasions.','From Nu. 1,500')">View Details</button>
+          <button class="light-button" onclick="openForm('Event Packaging')">Plan an Event</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="delivery">
+        <img src="./Images/delovery product.png" alt="Packaging delivery">
+        <div class="product-info">
+          <span class="product-tag">CONVENIENT</span>
+          <h3>Packaging Delivery</h3>
+          <p>Arrange delivery of packaging orders to your location in Bhutan.</p>
+          <button onclick="showDetails('Packaging Delivery','Arrange delivery of your packaging order to your location.','From Nu. 100')">View Details</button>
+          <button class="light-button" onclick="openForm('Packaging Delivery')">Request Delivery</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="eco">
+        <img src="./Images/gallery-resturant2.jfif" alt="Eco-friendly food packaging">
+        <div class="product-info">
+          <span class="product-tag">ECO-FRIENDLY</span>
+          <h3>Eco Packaging</h3>
+          <p>Explore biodegradable and compostable packaging options.</p>
+          <button onclick="showDetails('Eco Packaging','Explore biodegradable and compostable packaging options.','From Nu. 180')">View Details</button>
+          <button class="light-button" onclick="openForm('Eco Packaging')">Request Service</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="custom">
+        <img src="./Images/galleryfood.jfif" alt="Branded paper bags">
+        <div class="product-info">
+          <span class="product-tag">BRAND YOUR PACKAGING</span>
+          <h3>Branded Paper Bags</h3>
+          <p>Custom printed paper bags featuring your business logo and style.</p>
+          <button onclick="showDetails('Branded Paper Bags','Paper bags designed with your preferred logo and style.','From Nu. 300')">View Details</button>
+          <button class="light-button" onclick="openForm('Custom Packaging')">Customize</button>
+        </div>
+      </article>
+
+    </div>
+    <p id="noProducts" role="status"></p>
+  </section>
+
+  <!-- PROMOTION -->
+  <section class="promo">
+    <div>
+      <span>MADE FOR YOUR BUSINESS</span>
+      <h2>BETTER PACKAGING, BETTER FUTURE</h2>
+      <p>Bulk orders and custom solutions are available.</p>
+    </div>
+    <button onclick="openForm('Quote')">Get a Quote</button>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <div><i class="fa-solid fa-leaf"></i><p>Eco-conscious materials</p></div>
+    <div><i class="fa-solid fa-pen-ruler"></i><p>Custom designs</p></div>
+    <div><i class="fa-solid fa-truck"></i><p>Reliable delivery</p></div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div>
+      <span>STAY CONNECTED</span>
+      <h2>Feel free to Give Feedback</h2>
+      <p>We'd love to hear from you! Share your feedback and help us improve our products and services.</p>
+    </div>
+    <form onsubmit="subscribe(event)">
+      <input type="text" id="emailInput" placeholder="Type your Feedback" required>
+      <button type="submit">Send feedback</button>
+    </form>
+  </section>
+
+  <!-- chatbot satrt  -->
+
+
+<!-- chatbot --> 
+  <!-- Services Section -->
+  <!-- <section class="service-section">
+
+    <div class="service-icon" style="margin-left: 5%;">
+      <i class="fa-solid fa-seedling"></i>
+    </div>
+
+    <p class="subtitle" style="margin-left: 5%;">MAKE YOUR BUSINESS GREENER</p>
+
+    <h2 style="margin-left: 5%;">Looking for the Right Packaging?</h2>
+
+    <p style="margin-left: 5%;">
+      Explore our services and find packaging solutions that suit
+      your business needs.
+    </p>
+
+   
+
+  </section> -->
+    
+    
+      <!-- ECO-PACK CHATBOT BUTTON -->
+      <button
+        id="chatbotButton"
+        onclick="toggleChat()"
+        aria-label="Open Eco-Pack chatbot"
+      >
+        <img src="./Images/logo.jpg" alt="Eco-Pack Logo" id="chatbotLogo" />
+        <span id="closeIcon">×</span>
+      </button>
+
+      <!-- CHATBOT WINDOW -->
+      <div id="chat">
+        <div id="chatTop">
+          <img src="./Images/logo.jpg" alt="Eco-Pack" />
+          <div>
+            <h3>Eco-Pack Assistant</h3>
+            <p>Eco-friendly packaging assistant</p>
+          </div>
+        </div>
+
+        <div id="messages">
+          <p class="botMessage">🤖 Hello! Welcome to Eco-Pack.</p>
+          <p class="botMessage">🤖 How can I help you today?</p>
+
+          <button class="chatOption" onclick="reply('custom')">
+            Custom Packaging
+          </button>
+          <button class="chatOption" onclick="reply('event')">
+            Event Packaging
+          </button>
+          <button class="chatOption" onclick="reply('price')">Pricing</button>
+          <button class="chatOption" onclick="reply('order')">
+            Order Help
+          </button>
+        </div>
+
+        <div id="chatBottom">
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="Type your message..."
+            aria-label="Type your message"
+          />
+          <button
+            id="chatSend"
+            onclick="sendChatMessage()"
+            aria-label="Send message"
+          >
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+
+<!...end ....>
+
+
+<!-- chatbot end  -->
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h2 class="footer-logo">Eco-<span>Pack</span> 🌿</h2>
+        <p>Small changes in packaging can create a big difference. We help businesses in Bhutan find eco-friendly packaging for a greener future.</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-box">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="service.html">Eco Packaging</a></li>
+          <li><a href="service.html">Custom Packaging</a></li>
+          <li><a href="service.html">Gift Packaging</a></li>
+          <li><a href="service.html">Restaurant Packaging</a></li>
+          <li><a href="service.html">Bakery Packaging</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact Us</h3>
+        <p>Bhutan</p>
+        <p>Let's make packaging greener!</p>
+        <a href="contact.html" class="footer-btn">Get in Touch →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Eco-Pack | Protect Nature, Pack Sustainably.</p>
+    </div>
+  </footer>
+
+  <!-- PRODUCT DETAILS POPUP -->
+  <div class="popup" id="detailsPopup" role="dialog"
+    aria-modal="true" aria-labelledby="detailsTitle">
+    <div class="popup-content">
+      <button class="close-button" onclick="closePopup()" aria-label="Close">×</button>
+      <h2 id="detailsTitle"></h2>
+      <p id="detailsDescription"></p>
+      <h3 id="detailsPrice"></h3>
+      <button onclick="openForm('Product Enquiry')">Request This Product</button>
+    </div>
+  </div>
+
+  <!-- REQUEST FORM POPUP -->
+  <div class="popup" id="formPopup" role="dialog"
+    aria-modal="true" aria-labelledby="requestFormTitle">
+    <div class="popup-content">
+      <button class="close-button" onclick="closePopup()" aria-label="Close">×</button>
+      <h2 id="requestFormTitle">Packaging Request Form</h2>
+
+      <form id="requestForm" onsubmit="submitForm(event)">
+        <label for="customerName">Full Name *</label>
+        <input type="text" id="customerName" required>
+
+        <label for="customerEmail">Email *</label>
+        <input type="email" id="customerEmail" required>
+
+        <label for="customerPhone">Phone Number</label>
+        <input type="tel" id="customerPhone">
+
+        <label for="businessName">Business Name</label>
+        <input type="text" id="businessName">
+
+        <label for="productType">Product or Service *</label>
+        <select id="productType" required>
+          <option value="">Choose a product</option>
+          <option>Custom Packaging</option>
+          <option>Packaging Subscription</option>
+          <option>Event Packaging</option>
+          <option>Packaging Delivery</option>
+          <option>Eco Packaging</option>
+          <option>Product Enquiry</option>
+          <option>Quote</option>
+        </select>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1">
+
+        <label for="preferredDate">Preferred Date</label>
+        <input type="date" id="preferredDate">
+
+        <label for="requirements">Design or Other Requirements *</label>
+        <textarea id="requirements" rows="4" required></textarea>
+
+        <button type="submit">Submit Request</button>
+      </form>
+      <p id="formMessage" role="status"></p>
+    </div>
+  </div>
+
+  <script src="./JS/home.js"></script>
+  <script src="./JS/products.js"></script>
+</body>
+</html>

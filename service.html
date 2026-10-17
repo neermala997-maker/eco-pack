@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+        <link rel="shortcut icon" href="./Images/logo.jpg" type="image/x-icon">
+
+
+    <link rel="stylesheet" href="./CSS/service.css" />
+    <title>Eco-Pack</title>
+  </head>
+  <body>
+  <!-- NAVBAR START -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html"><img src="./Images/logo.jpg" alt="Eco-Pack Logo"></a>
+      </div>
+
+      <div class="nav-menu-wrapper" id="navMenuWrapper">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar-search mobile-search">
+          <form id="searchFormMobile" role="search">
+            <input type="search" id="searchInputMobile" placeholder="Search eco products..." aria-label="Search products">
+            <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="navbar-right-actions">
+        <div class="navbar-search desktop-search">
+          <form id="searchFormDesktop" role="search">
+            <input type="search" id="searchInputDesktop" placeholder="Search eco products..." aria-label="Search products">
+            <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <a href="gallerycart.html" class="cart-icon-btn" aria-label="Shopping Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+
+      <button type="button" class="navbar-toggler" id="navbarToggler" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="navMenuWrapper">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  <!-- NAVBAR END -->
+
+
+    <main>
+
+    
+<div class="ani">
+  <h1  class="display-1 fw-bold text-white"><span class="eco" style="color: green">Eco</span><span class="pack">-Pack</span></h1>
+  <p>
+    “Small changes in the way we pack, use, and reuse our products can
+    create a big change for our communities, our environment, and the
+    future of Bhutan.”
+  </p>
+            <a href="contact.html" class="footer-btn"> Get in Touch → </a>
+
+</div>
+
+      <!-- Banner -->
+      <h2 style="color: green" id = "kondo">Our Services</h2>
+
+      <section class="featured-service">
+        <div class="featured-image">
+          <img src="./Images/service Eco-pack.jpg" />
+        </div>
+
+        <div class="featured-content">
+          <span>OUR FEATURED SERVICE</span>
+
+          <h2>Custom Packaging</h2>
+
+          <p>
+            Packaging made your way, designed for your brand. We create
+            personalized, eco-friendly packaging based on your business needs,
+            style and product.
+          </p>
+        </div>
+      </section>
+
+      <p class="service-subtitle" style="text-align: left; margin-left: 10%; margin-top: 10%; font-size: 32px; color: green;">
+        Sustainable packaging solutions designed for your business
+      </p>
+
+      <!-- SERVICES -->
+
+      <section class="services" id="services">
+        <div class="service-container">
+          <!-- CUSTOM PACKAGING -->
+
+          <div class="service-card">
+            <div class="service-icon">📦</div>
+
+            <h3>Custom Packaging</h3>
+
+            <p>
+              Personalized eco-friendly packaging designed according to your
+              business needs.
+            </p>
+
+            <button onclick="openService('custom')">Explore Service →</button>
+          </div>
+
+          <!-- PACKAGING SUBSCRIPTION -->
+
+          <div class="service-card">
+            <div class="service-icon">🔄</div>
+
+            <h3>Packaging Subscription</h3>
+
+            <p>
+              Get regular packaging supplies with flexible plans for your
+              business.
+            </p>
+
+            <button onclick="openService('subscription')">
+              Explore Service →
+            </button>
+          </div>
+
+          <!-- EVENT PACKAGING -->
+
+          <div class="service-card">
+            <div class="service-icon">🎁</div>
+
+            <h3>Event Packaging Solutions</h3>
+
+            <p>
+              Sustainable packaging solutions for events, celebrations and
+              special occasions.
+            </p>
+
+            <button onclick="openService('event')">Explore Service →</button>
+          </div>
+
+          <!-- PACKAGING DELIVERY -->
+
+          <div class="service-card">
+            <div class="service-icon">🚚</div>
+
+            <h3>Packaging Delivery</h3>
+
+            <p>
+              Convenient delivery of your packaging directly to your business.
+            </p>
+
+            <button onclick="openService('delivery')">Explore Service →</button>
+          </div>
+
+          <!-- ECO PACKAGING -->
+
+          <div class="service-card">
+            <div class="service-icon">♻️</div>
+
+            <h3>Eco Packaging</h3>
+
+            <p>
+              Environment-friendly packaging made from sustainable and
+              recyclable materials.
+            </p>
+
+            <button onclick="openService('eco')">Explore Service →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- POPUP -->
+
+      <div class="popup" id="servicePopup">
+        <div class="popup-content">
+          <button class="close-btn" onclick="closeService()">X</button>
+
+          <img src="./Images/service cup.jpg" id="popupImage" />
+
+          <div class="popup-info">
+            <span class="popup-subtitle"> OUR SERVICE </span>
+
+            <h2 id="popupTitle">Custom Packaging</h2>
+
+            <p id="popupDescription">
+              Personalized eco-friendly packaging designed for your business.
+            </p>
+
+            <h3>What We Offer</h3>
+
+            <ul id="popupFeatures">
+              <li>Custom Design</li>
+
+              <li>Eco-friendly Materials</li>
+
+              <li>Different Sizes</li>
+
+              <li>Brand Printing</li>
+            </ul>
+
+            <div id="actionButton"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ECO-PACK CHATBOT BUTTON -->
+      <button
+        id="chatbotButton"
+        onclick="toggleChat()"
+        aria-label="Open Eco-Pack chatbot"
+      >
+        <img src="./Images/logo.jpg" alt="Eco-Pack Logo" id="chatbotLogo" />
+        <span id="closeIcon">×</span>
+      </button>
+
+      <!-- CHATBOT WINDOW -->
+      <div id="chat">
+        <div id="chatTop">
+          <img src="./Images/logo.jpg" alt="Eco-Pack" />
+          <div>
+            <h3>Eco-Pack Assistant</h3>
+            <p>Eco-friendly packaging assistant</p>
+          </div>
+        </div>
+
+        <div id="messages">
+          <p class="botMessage">🤖 Hello! Welcome to Eco-Pack.</p>
+          <p class="botMessage">🤖 How can I help you today?</p>
+
+          <button class="chatOption" onclick="reply('custom')">
+            Custom Packaging
+          </button>
+          <button class="chatOption" onclick="reply('event')">
+            Event Packaging
+          </button>
+          <button class="chatOption" onclick="reply('price')">Pricing</button>
+          <button class="chatOption" onclick="reply('order')">
+            Order Help
+          </button>
+        </div>
+
+        <div id="chatBottom">
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="Type your message..."
+            aria-label="Type your message"
+          />
+          <button
+            id="chatSend"
+            onclick="sendChatMessage()"
+            aria-label="Send message"
+          >
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- service end  -->
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo and Description -->
+        <div class="footer-box">
+          <h2 class="footer-logo">Eco-<span>Pack</span> 🌿</h2>
+
+          <p>
+            Small changes in packaging can create a big difference. We help
+            businesses in Bhutan find eco-friendly packaging for a greener
+            future.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Services -->
+        <div class="footer-box">
+          <h3>Our Services</h3>
+
+          <ul>
+            <li><a href="service.html">Eco Packaging</a></li>
+            <li><a href="service.html">Custom Packaging</a></li>
+            <li><a href="service.html">Gift Packaging</a></li>
+            <li><a href="service.html">Restaurant Packaging</a></li>
+            <li><a href="service.html">Bakery Packaging</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-box" id = "contaact-boxx">
+          <h3>Contact Us</h3>
+
+          <p>Bhutan</p>
+          <p>Let's make packaging greener!</p>
+
+          <a href="contact.html" class="footer-btn"> Get in Touch → </a>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Eco-Pack | Protect Nature, Pack Sustainably.</p>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+
+  
+  <script src="./JS/services.js"></script>
+
+
+  </body>
+</html>

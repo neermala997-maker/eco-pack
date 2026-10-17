@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco-Pack | Premium Collection</title>
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+
+  
+  <!-- NAVBAR START -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html"><img src="./Images/logo.jpg" alt="Eco-Pack Logo"></a>
+      </div>
+
+      <div class="nav-menu-wrapper" id="navMenuWrapper">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar-search mobile-search">
+          <form id="searchFormMobile" role="search">
+            <input type="search" id="searchInputMobile" placeholder="Search eco products..." aria-label="Search products">
+            <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="navbar-right-actions">
+        <div class="navbar-search desktop-search">
+          <form id="searchFormDesktop" role="search">
+            <input type="search" id="searchInputDesktop" placeholder="Search eco products..." aria-label="Search products">
+            <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <a href="gallerycart.html" class="cart-icon-btn" aria-label="Shopping Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+
+      <button type="button" class="navbar-toggler" id="navbarToggler" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="navMenuWrapper">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  <!-- NAVBAR END -->
+
+
+  <header class="page-hero">
+    <span class="header-tag"><i class="fa-solid fa-crown"></i> EXCLUSIVE COLLECTION</span>
+    <h1>Premium <span class="green-text">Packaging</span></h1>
+    <p>Higher-quality, stylish, and customizable eco-friendly packaging for your business.</p>
+  </header>
+  <main class="page-wrap">
+    <div class="section-heading"><span>OUR PREMIUM RANGE</span><h2>Choose Your Packaging</h2><p>Prices are sample prices in Bhutanese Ngultrum (Nu.) and can be adjusted.</p></div>
+    <div class="product-grid" id="premium-products">
+      <article class="shop-card"><img src="./Images/gallery-resturant2.jfif" alt="Premium restaurant box"><div class="shop-card-body"><span class="category-label">RESTAURANT</span><h3>Premium Burger Box</h3><p>Sturdy kraft box for burgers, sandwiches, and takeaway meals.</p><div class="price">Nu. 220 <small>/ pack</small></div><button class="primary-btn buy-button" data-id="burger-box">Buy Now <i class="fa-solid fa-arrow-right"></i></button></div></article>
+      <article class="shop-card"><img src="./Images/gallery-event8.jfif" alt="Luxury gift box"><div class="shop-card-body"><span class="category-label">GIFT</span><h3>Luxury Gift Box</h3><p>Premium recyclable gift box for special gifts and products.</p><div class="price">Nu. 350 <small>/ pack</small></div><button class="primary-btn buy-button" data-id="gift-box">Buy Now <i class="fa-solid fa-arrow-right"></i></button></div></article>
+      <article class="shop-card"><img src="./Images/gallery food5.jfif" alt="Bamboo food container"><div class="shop-card-body"><span class="category-label">RESTAURANT</span><h3>Bamboo Food Container</h3><p>Reusable-looking natural style for premium food presentation.</p><div class="price">Nu. 300 <small>/ pack</small></div><button class="primary-btn buy-button" data-id="bamboo-container">Buy Now <i class="fa-solid fa-arrow-right"></i></button></div></article>
+      <article class="shop-card"><img src="./Images/gallery-bakery6.jfif" alt="Premium bakery box"><div class="shop-card-body"><span class="category-label">BAKERY</span><h3>Premium Bakery Box</h3><p>Protective packaging for cakes, pastries, and baked goods.</p><div class="price">Nu. 280 <small>/ pack</small></div><button class="primary-btn buy-button" data-id="bakery-box">Buy Now <i class="fa-solid fa-arrow-right"></i></button></div></article>
+      <article class="shop-card"><img src="./Images/gallery-bakery4.jfif" alt="Custom gift packaging"><div class="shop-card-body"><span class="category-label">CUSTOM</span><h3>Custom Gift Packaging</h3><p>Elegant kraft packaging suitable for branding and gifting.</p><div class="price">Nu. 400 <small>/ pack</small></div><button class="primary-btn buy-button" data-id="custom-gift">Buy Now <i class="fa-solid fa-arrow-right"></i></button></div></article>
+      <article class="shop-card"><img src="./Images/gallery-event7.jfif" alt="Event gift box"><div class="shop-card-body"><span class="category-label">EVENT</span><h3>Event Gift Box</h3><p>Premium packaging for weddings, parties, and celebrations.</p><div class="price">Nu. 450 <small>/ pack</small></div><button class="primary-btn buy-button" data-id="event-box">Buy Now <i class="fa-solid fa-arrow-right"></i></button></div></article>
+    </div>
+  </main>
+
+  <!-- Customer details form modal -->
+  <div class="modal-backdrop" id="order-modal" aria-hidden="true">
+    <div class="order-modal" role="dialog" aria-modal="true" aria-labelledby="form-title">
+      <button class="modal-close" id="close-modal" aria-label="Close form">&times;</button>
+      <h2 id="form-title">Your Delivery Details</h2>
+      <p class="muted">Complete your information to add this product to your cart.</p>
+      <div class="selected-product" id="selected-product-summary"></div>
+      <form id="customer-form">
+        <input type="hidden" id="selected-product-id">
+        <label for="customer-name">Full name *</label><input id="customer-name" name="name" required autocomplete="name" placeholder="Enter your full name">
+        <div class="form-row">
+          <div><label for="customer-phone">Phone number *</label><input id="customer-phone" name="phone" required type="tel" autocomplete="tel" placeholder="+975 17 123456"></div>
+          <div><label for="customer-email">Email address</label><input id="customer-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+        </div>
+        <label for="customer-address">Delivery address *</label><textarea id="customer-address" name="address" required autocomplete="street-address" placeholder="Village / Thromde, street, building or landmark"></textarea>
+        <div class="form-row">
+          <div><label for="customer-dzongkhag">Dzongkhag *</label><select id="customer-dzongkhag" name="dzongkhag" required><option value="">Select Dzongkhag</option><option>Bumthang</option><option>Chhukha</option><option>Dagana</option><option>Gasa</option><option>Haa</option><option>Lhuntse</option><option>Mongar</option><option>Paro</option><option>Pema Gatshel</option><option>Punakha</option><option>Samdrup Jongkhar</option><option>Samtse</option><option>Sarpang</option><option>Thimphu</option><option>Trashigang</option><option>Trashiyangtse</option><option>Trongsa</option><option>Tsirang</option><option>Wangdue Phodrang</option><option>Zhemgang</option></select></div>
+          <div><label for="customer-quantity">Quantity (packs) *</label><input id="customer-quantity" name="quantity" type="number" min="1" max="999" value="1" required></div>
+        </div>
+        <label for="customer-note">Additional note (optional)</label><textarea id="customer-note" name="note" placeholder="Any delivery instructions or custom requests"></textarea>
+        <button type="submit" class="primary-btn full-btn">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+      </form>
+    </div>
+  </div>
+
+  
+    <!-- chatbot start  -->
+
+    <!-- ECO-PACK CHATBOT BUTTON -->
+    <button
+      id="chatbotButton"
+      onclick="toggleChat()"
+      aria-label="Open Eco-Pack chatbot"
+    >
+      <img src="./Images/logo.jpg" alt="Eco-Pack Logo" id="chatbotLogo" />
+      <span id="closeIcon">×</span>
+    </button>
+
+    <!-- CHATBOT WINDOW -->
+    <div id="chat">
+      <div id="chatTop">
+        <img src="./Images/logo.jpg" alt="Eco-Pack" />
+        <div>
+          <h3>Eco-Pack Assistant</h3>
+          <p>Eco-friendly packaging assistant</p>
+        </div>
+      </div>
+
+      <div id="messages">
+        <p class="botMessage">🤖 Hello! Welcome to Eco-Pack.</p>
+        <p class="botMessage">🤖 How can I help you today?</p>
+
+        <button class="chatOption" onclick="reply('custom')">
+          Custom Packaging
+        </button>
+        <button class="chatOption" onclick="reply('event')">
+          Event Packaging
+        </button>
+        <button class="chatOption" onclick="reply('price')">Pricing</button>
+        <button class="chatOption" onclick="reply('order')">Order Help</button>
+      </div>
+
+      <div id="chatBottom">
+        <input
+          id="chatInput"
+          type="text"
+          placeholder="Type your message..."
+          aria-label="Type your message"
+        />
+        <button
+          id="chatSend"
+          onclick="sendChatMessage()"
+          aria-label="Send message"
+        >
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- chatbot end  -->
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo and Description -->
+        <div class="footer-box">
+          <h2 class="footer-logo">Eco-<span>Pack</span> 🌿</h2>
+
+          <p>
+            Small changes in packaging can create a big difference. We help
+            businesses in Bhutan find eco-friendly packaging for a greener
+            future.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Services -->
+        <div class="footer-box">
+          <h3>Our Services</h3>
+
+          <ul>
+            <li><a href="service.html">Eco Packaging</a></li>
+            <li><a href="service.html">Custom Packaging</a></li>
+            <li><a href="service.html">Gift Packaging</a></li>
+            <li><a href="service.html">Restaurant Packaging</a></li>
+            <li><a href="service.html">Bakery Packaging</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-box">
+          <h3>Contact Us</h3>
+
+          <p>Bhutan</p>
+          <p>Let's make packaging greener!</p>
+
+          <a href="contact.html" class="footer-btn"> Get in Touch → </a>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Eco-Pack | Protect Nature, Pack Sustainably.</p>
+      </div>
+    </footer>
+    <!-- FOOTER END --> 
+      <script src="./JS/shop.js"></script>
+  <script src="./JS/premium.js"></script>
+  <script src="./JS/home.js"></script>
+</body>
+</html>

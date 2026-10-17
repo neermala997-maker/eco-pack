@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&family=Dancing+Script:wght@400..700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="./Images/logo.jpg" type="image/x-icon" />
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="./CSS/about.css" />
+
+    <title>Eco-Pack</title>
+  </head>
+
+  <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <a href="index.html"
+            ><img src="./Images/logo.jpg" alt="Eco-Pack Logo"
+          /></a>
+        </div>
+
+        <div class="nav-menu-wrapper" id="navMenuWrapper">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="navbar-search mobile-search">
+            <form id="searchFormMobile" role="search">
+              <input
+                type="search"
+                id="searchInputMobile"
+                placeholder="Search eco products..."
+                aria-label="Search products"
+              />
+              <button type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="navbar-right-actions">
+          <div class="navbar-search desktop-search">
+            <form id="searchFormDesktop" role="search">
+              <input
+                type="search"
+                id="searchInputDesktop"
+                placeholder="Search eco products..."
+                aria-label="Search products"
+              />
+              <button type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+          <a
+            href="gallerycart.html"
+            class="cart-icon-btn"
+            aria-label="Shopping Cart"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge">0</span>
+          </a>
+        </div>
+
+        <button
+          type="button"
+          class="navbar-toggler"
+          id="navbarToggler"
+          aria-label="Toggle Navigation"
+          aria-expanded="false"
+          aria-controls="navMenuWrapper"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- NAVBAR END -->
+    <!-- CAROUSEL START -->
+    <div
+      id="carouselExampleDark"
+      class="carousel carousel-dark slide"
+      data-bs-ride="carousel"
+    >
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+      </div>
+
+      <!-- Carousel Images and Captions -->
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img
+            src="./Images/about-carousel1.jpg"
+            class="d-block w-100"
+            alt="Eco-Pack sustainable packaging"
+          />
+
+          <div class="carousel-caption d-none d-md-block">
+            <h1 class="display-1 fw-bold text-white">
+              About-<span style="color: green">Us</span>
+            </h1>
+
+            <p class="text-white">
+              Eco-Pack is a step toward a greener Bhutan. 🌿 We create
+              eco-friendly packaging that reduces waste, supports local
+              businesses, and protects nature for a sustainable future.
+            </p>
+            <a href="contact.html" class="footer-btn"> Get in Touch → </a>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="2000">
+          <img
+            src="./Images/about-carousel2.jpg"
+            class="d-block w-100"
+            alt="Eco-friendly packaging"
+          />
+
+          <div class="carousel-caption d-none d-md-block">
+            <h3 class="display-4 fw-bold text-white">
+              About <span>Eco-Pack</span>
+            </h3>
+
+            <p class="text-white">
+              Eco-Pack is more than packaging—it’s a step toward a cleaner,
+              happier Bhutan. We create reusable, eco-friendly packaging that
+              reduces waste, supports local businesses and sustainable
+              development. Together, we protect nature, empower communities,
+              preserve our heritage, and build a sustainable future.
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="2000">
+          <img
+            src="./Images/about-carousel3.jpg"
+            class="d-block w-100"
+            alt="Eco-Pack sustainable packaging"
+          />
+
+          <div class="carousel-caption d-none d-md-block">
+            <h3 class="display-4 fw-bold text-white">
+              About <span>Eco-Pack</span>
+            </h3>
+
+            <p class="text-white">
+              Eco-Pack is more than packaging—it’s a step toward a cleaner,
+              happier Bhutan. We create reusable, eco-friendly packaging that
+              reduces waste, supports local businesses and sustainable
+              development. Together, we protect nature, empower communities,
+              preserve our heritage, and build a sustainable future.
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="2000">
+          <img
+            src="./Images/about-mission.jpg"
+            class="d-block w-100"
+            alt="Eco-Pack mission"
+          />
+
+          <div class="carousel-caption d-none d-md-block">
+            <h3 class="display-4 fw-bold text-white">
+              About <span>Eco-Pack</span>
+            </h3>
+
+            <p class="fs-5 text-white">
+              Eco-Pack is more than packaging—it’s a step toward a cleaner,
+              happier Bhutan. We create reusable, eco-friendly packaging that
+              reduces waste, supports local businesses and sustainable
+              development. Together, we protect nature, empower communities,
+              preserve our heritage, and build a sustainable future.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Previous Button -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <!-- Next Button -->
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- CAROUSEL END -->
+
+    <!-- VISION SECTION -->
+    <section id="vision">
+      <div class="vision-box">
+        <div class="vision-img">
+          <img src="./Images/about-vision.jpg" alt="Eco-Pack Vision" />
+        </div>
+
+        <div class="vision-content">
+          <h2>Our Vision</h2>
+
+          <p>
+            “To create a cleaner and greener Bhutan by making eco-friendly
+            packaging affordable, accessible, and practical for businesses and
+            consumers.”
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- VISION END -->
+
+    <!-- MISSION SECTION -->
+    <section id="mission">
+      <div class="mission-box">
+        <div class="mission-content">
+          <h2>Our Mission</h2>
+
+          <p>
+            “To provide affordable, practical, and eco-friendly packaging
+            solutions to Bhutanese businesses while reducing plastic waste and
+            promoting sustainable practices.”
+          </p>
+        </div>
+
+        <div class="mission-img">
+          <img src="./Images/about-mission.jpg" alt="Eco-Pack Mission" />
+        </div>
+      </div>
+    </section>
+    <!-- MISSION END -->
+
+    <!-- MEET OUR TEAM -->
+    <section id="mainContainer">
+      <h2>Meet our Team</h2>
+
+      <div class="card-group">
+        <!-- Nermala Ghalley -->
+        <div class="card">
+          <img
+            src="./Images/KONDO.png"
+            alt="Nermala Ghalley"
+            style="background-color: black"
+          />
+
+          <div class="layer"></div>
+
+          <div class="info">
+            <h1>Nermala Ghalley</h1>
+            <p>Developer</p>
+
+            <p class="social-links">
+              <a
+                href="https://www.facebook.com/"
+                aria-label="Nermala on Facebook"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+
+              <a
+                href="https://mail.google.com/mail/u/0/#inbox"
+                aria-label="Email Nermala"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+              <a
+                href="https://web.telegram.org/k/"
+                aria-label="Nermala on Telegram"
+              >
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Dorji Wangchuk -->
+        <div class="card">
+          <img src="./Images/about-od.jpg" alt="Dorji Wangchuk" />
+
+          <div class="layer"></div>
+
+          <div class="info">
+            <h1>Dorji Wangchuk</h1>
+            <p>Developer</p>
+
+            <p class="social-links">
+              <a
+                href="https://www.facebook.com/"
+                aria-label="Dorji on Facebook"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+
+              <a
+                href="https://mail.google.com/mail/u/0/#inbox"
+                aria-label="Email Dorji"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+              <a
+                href="https://web.telegram.org/k/"
+                aria-label="Dorji on Telegram"
+              >
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Tshering Phuntsho -->
+        <div class="card">
+          <img src="./Images/about-mental crack.jpg" alt="Tshering Phuntsho" />
+
+          <div class="layer"></div>
+
+          <div class="info">
+            <h1>Tshering Phuntsho</h1>
+            <p>Developer</p>
+
+            <p class="social-links">
+              <a
+                href="https://www.facebook.com/"
+                aria-label="Tshering on Facebook"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+
+              <a
+                href="https://mail.google.com/mail/u/0/#inbox"
+                aria-label="Email Tshering"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+              <a
+                href="https://web.telegram.org/k/"
+                aria-label="Tshering on Telegram"
+              >
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Nim Lhaki -->
+        <div class="card">
+          <img src="./Images/about-nim.jpg" alt="Nim Lhaki" />
+
+          <div class="layer"></div>
+
+          <div class="info">
+            <h1>Nim Lhaki</h1>
+            <p>Developer</p>
+
+            <p class="social-links">
+              <a href="https://www.facebook.com/" aria-label="Nim on Facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+
+              <a
+                href="https://mail.google.com/mail/u/0/#inbox"
+                aria-label="Email Nim"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+              <a
+                href="https://web.telegram.org/k/"
+                aria-label="Nim on Telegram"
+              >
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Sonam Yanki -->
+        <div class="card">
+          <img src="./Images/about-yanki.jpg" alt="Sonam Yanki" />
+
+          <div class="layer"></div>
+
+          <div class="info">
+            <h1>Sonam Yanki</h1>
+            <p>Developer</p>
+
+            <p class="social-links">
+              <a
+                href="https://www.facebook.com/"
+                aria-label="Sonam on Facebook"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+
+              <a
+                href="https://mail.google.com/mail/u/0/#inbox"
+                aria-label="Email Sonam"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+              <a
+                href="https://web.telegram.org/k/"
+                aria-label="Sonam on Telegram"
+              >
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TEAM SECTION END -->
+
+    <!-- chatbot -->
+    <!-- Services Section -->
+    <section class="service-section">
+      <div class="service-icon">
+        <i class="fa-solid fa-seedling"></i>
+      </div>
+
+      <p class="subtitle">MAKE YOUR BUSINESS GREENER</p>
+
+      <h2>Looking for the Right Packaging?</h2>
+
+      <p>
+        Explore our services and find packaging solutions that suit your
+        business needs.
+      </p>
+
+      <!-- <a href="service.html" class="service-btn">
+      Explore Our Services
+      <i class="fa-solid fa-arrow-right"></i>
+    </a> -->
+    </section>
+
+    <!-- ECO-PACK CHATBOT BUTTON -->
+    <button
+      id="chatbotButton"
+      onclick="toggleChat()"
+      aria-label="Open Eco-Pack chatbot"
+    >
+      <img src="./Images/logo.jpg" alt="Eco-Pack Logo" id="chatbotLogo" />
+      <span id="closeIcon">×</span>
+    </button>
+
+    <!-- CHATBOT WINDOW -->
+    <div id="chat">
+      <div id="chatTop">
+        <img src="./Images/logo.jpg" alt="Eco-Pack" />
+        <div>
+          <h3>Eco-Pack Assistant</h3>
+          <p>Eco-friendly packaging assistant</p>
+        </div>
+      </div>
+
+      <div id="messages">
+        <p class="botMessage">🤖 Hello! Welcome to Eco-Pack.</p>
+        <p class="botMessage">🤖 How can I help you today?</p>
+
+        <button class="chatOption" onclick="reply('custom')">
+          Custom Packaging
+        </button>
+        <button class="chatOption" onclick="reply('event')">
+          Event Packaging
+        </button>
+        <button class="chatOption" onclick="reply('price')">Pricing</button>
+        <button class="chatOption" onclick="reply('order')">Order Help</button>
+      </div>
+
+      <div id="chatBottom">
+        <input
+          id="chatInput"
+          type="text"
+          placeholder="Type your message..."
+          aria-label="Type your message"
+        />
+        <button
+          id="chatSend"
+          onclick="sendChatMessage()"
+          aria-label="Send message"
+        >
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!...end ....>
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo and Description -->
+        <div class="footer-box">
+          <h2 class="footer-logo">Eco-<span>Pack</span> 🌿</h2>
+
+          <p>
+            Small changes in packaging can create a big difference. We help
+            businesses in Bhutan find eco-friendly packaging for a greener
+            future.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Services -->
+        <div class="footer-box">
+          <h3>Our Services</h3>
+
+          <ul>
+            <li><a href="service.html">Eco Packaging</a></li>
+            <li><a href="service.html">Custom Packaging</a></li>
+            <li><a href="service.html">Gift Packaging</a></li>
+            <li><a href="service.html">Restaurant Packaging</a></li>
+            <li><a href="service.html">Bakery Packaging</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-box" id="contaact-boxx">
+          <h3>Contact Us</h3>
+
+          <p>Bhutan</p>
+          <p>Let's make packaging greener!</p>
+
+          <a href="contact.html" class="footer-btn"> Get in Touch → </a>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Eco-Pack | Protect Nature, Pack Sustainably.</p>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+
+    <!-- Bootstrap JavaScript: required for carousel -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Your JavaScript -->
+    <script src="./JS/home.js"></script>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+      AOS.init({
+        duration: 2000,
+        once: true,
+      });
+    </script>
+
+    <!-- js start  -->
+
+    <!-- CART SCRIPT -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("cart-items-container");
+        const cart = JSON.parse(localStorage.getItem("ecoPackCart")) || [];
+
+        // Update badge on load
+        const badge = document.querySelector(".cart-badge");
+        if (badge) {
+          badge.textContent = cart.length;
+        }
+
+        if (cart.length === 0) {
+          container.innerHTML = "<p>Your cart is empty.</p>";
+          return;
+        }
+
+        let html = "<ul style='list-style: none; padding: 0;'>";
+        cart.forEach((item, index) => {
+          html += `
+            <li style="background: #f9f9f9; border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px;">
+                <strong>Request #${index + 1}: ${item.product}</strong><br>
+                Full Name: ${item.fullName}<br>
+                Business: ${item.businessName}<br>
+                Quantity: ${item.quantity}<br>
+                Preferred Date: ${item.preferredDate}<br>
+                Requirements: ${item.requirements}
+            </li>
+          `;
+        });
+        html += "</ul>";
+        container.innerHTML = html;
+
+        // Clear cart functionality
+        const clearBtn = document.getElementById("clear-cart");
+        if (clearBtn) {
+          clearBtn.addEventListener("click", function () {
+            localStorage.removeItem("ecoPackCart");
+            location.reload();
+          });
+        }
+      });
+    </script>
+    <!-- js end  -->
+    <!-- <script src="./JS/shop.js"></script>
+       <script src="./JS/about.js"></script> -->
+    <script src="./JS/about.js"></script>
+  </body>
+</html>
