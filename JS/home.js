@@ -188,3 +188,46 @@ function goToProducts(category) {
   window.location.href =
     "products.html?category=" + encodeURIComponent(category) + form;
 }
+
+
+// premium 
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("cart-items-container");
+  const cart = JSON.parse(localStorage.getItem("ecoPackCart")) || [];
+
+  // Update badge on load
+  const badge = document.querySelector(".cart-badge");
+  if (badge) {
+    badge.textContent = cart.length;
+  }
+
+  if (cart.length === 0) {
+    container.innerHTML = "<p>Your cart is empty.</p>";
+    return;
+  }
+
+  let html = "<ul style='list-style: none; padding: 0;'>";
+  cart.forEach((item, index) => {
+    html += `
+            <li style="background: #f9f9f9; border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px;">
+                <strong>Request #${index + 1}: ${item.product}</strong><br>
+                Full Name: ${item.fullName}<br>
+                Business: ${item.businessName}<br>
+                Quantity: ${item.quantity}<br>
+                Preferred Date: ${item.preferredDate}<br>
+                Requirements: ${item.requirements}
+            </li>
+          `;
+  });
+  html += "</ul>";
+  container.innerHTML = html;
+
+  // Clear cart functionality
+  const clearBtn = document.getElementById("clear-cart");
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function () {
+      localStorage.removeItem("ecoPackCart");
+      location.reload();
+    });
+  }
+});

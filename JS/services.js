@@ -739,110 +739,6 @@ function confirmOrder() {
   }
 }
 
-// ==========================================
-// ECO-PACK CHATBOT
-// Supports the IDs/classes in gallerycart.html.
-// ==========================================
-function initializeChatbot() {
-  const button = document.getElementById("chatbotButton");
-  const chat = document.getElementById("chat");
-  const logo = document.getElementById("chatbotLogo");
-  const closeIcon = document.getElementById("closeIcon");
-  const input = document.getElementById("chatInput");
-  const sendButton = document.getElementById("chatSend");
-  const messages = document.getElementById("messages");
-  if (!button || !chat || !messages) return;
-
-  function addMessage(message, className) {
-    const paragraph = document.createElement("p");
-    paragraph.className = className;
-    paragraph.textContent = message;
-    messages.appendChild(paragraph);
-    messages.scrollTop = messages.scrollHeight;
-  }
-
-  function toggleChat() {
-    const isOpen = chat.classList.toggle("active");
-    button.classList.toggle("active", isOpen);
-    button.setAttribute("aria-expanded", String(isOpen));
-    button.setAttribute(
-      "aria-label",
-      isOpen ? "Close Eco-Pack chatbot" : "Open Eco-Pack chatbot",
-    );
-    if (logo) logo.style.display = isOpen ? "none" : "block";
-    if (closeIcon) closeIcon.style.display = isOpen ? "block" : "none";
-    if (isOpen) input?.focus();
-  }
-
-  function reply(type) {
-    const replies = {
-      custom:
-        "We create personalized packaging for your business needs with different sizes, materials, and branding options.",
-      event:
-        "Our event packaging is suitable for weddings, parties, and special occasions.",
-      price: "Pricing depends on packaging type, quantity, size, and design.",
-      order:
-        "You can add products to your cart, adjust quantities, and confirm a demonstration order. Complete your customer details first.",
-    };
-    addMessage(
-      "You selected: " + type.charAt(0).toUpperCase() + type.slice(1),
-      "userMessage",
-    );
-    addMessage(
-      "🤖 " + (replies[type] || "Please visit our Contact page for help."),
-      "botMessage",
-    );
-  }
-
-  function getBotReply(message) {
-    const text = message.toLowerCase();
-    if (text.includes("price") || text.includes("cost"))
-      return "🤖 Our prices depend on packaging type, quantity, and design.";
-    if (text.includes("custom"))
-      return "🤖 We offer personalized packaging. Please visit our Services page.";
-    if (text.includes("event") || text.includes("wedding"))
-      return "🤖 We provide sustainable packaging for weddings, parties, and special occasions.";
-    if (text.includes("order") || text.includes("cart"))
-      return "🤖 Visit your cart to change quantities, remove products, and confirm your demonstration order.";
-    if (text.includes("subscription"))
-      return "🤖 Our packaging subscription offers regular supplies with flexible plans.";
-    if (text.includes("delivery"))
-      return "🤖 We offer convenient packaging delivery directly to your business.";
-    if (text.includes("eco") || text.includes("recycl"))
-      return "🤖 We help businesses find environmentally friendly packaging options.";
-    if (text.includes("hello") || text.includes("hi"))
-      return "🤖 Hello! Welcome to Eco-Pack. How can I help you?";
-    return "🤖 Thank you for contacting Eco-Pack! Ask me about custom packaging, events, pricing, delivery, or orders.";
-  }
-
-  function sendChatMessage() {
-    if (!input) return;
-    const message = input.value.trim();
-    if (!message) return;
-    addMessage("You: " + message, "userMessage");
-    addMessage(getBotReply(message), "botMessage");
-    input.value = "";
-    input.focus();
-  }
-
-  button.addEventListener("click", toggleChat);
-  document.querySelectorAll(".chatOption").forEach((option) => {
-    option.addEventListener("click", () => reply(option.dataset.reply || ""));
-  });
-  sendButton?.addEventListener("click", sendChatMessage);
-  input?.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      sendChatMessage();
-    }
-  });
-
-  // Keep compatibility with any other page using inline onclick handlers.
-  window.toggleChat = toggleChat;
-  window.reply = reply;
-  window.sendChatMessage = sendChatMessage;
-}
-
 // Compatibility helper for service-page buttons that call goToProducts(category).
 function goToProducts(category) {
   const form =
@@ -852,5 +748,49 @@ function goToProducts(category) {
   window.location.href =
     "products.html?category=" + encodeURIComponent(category) + form;
 }
+
+
+// premium 
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("cart-items-container");
+  const cart = JSON.parse(localStorage.getItem("ecoPackCart")) || [];
+
+  // Update badge on load
+  const badge = document.querySelector(".cart-badge");
+  if (badge) {
+    badge.textContent = cart.length;
+  }
+
+  if (cart.length === 0) {
+    container.innerHTML = "<p>Your cart is empty.</p>";
+    return;
+  }
+
+  let html = "<ul style='list-style: none; padding: 0;'>";
+  cart.forEach((item, index) => {
+    html += `
+            <li style="background: #f9f9f9; border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px;">
+                <strong>Request #${index + 1}: ${item.product}</strong><br>
+                Full Name: ${item.fullName}<br>
+                Business: ${item.businessName}<br>
+                Quantity: ${item.quantity}<br>
+                Preferred Date: ${item.preferredDate}<br>
+                Requirements: ${item.requirements}
+            </li>
+          `;
+  });
+  html += "</ul>";
+  container.innerHTML = html;
+
+  // Clear cart functionality
+  const clearBtn = document.getElementById("clear-cart");
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function () {
+      localStorage.removeItem("ecoPackCart");
+      location.reload();
+    });
+  }
+});
+
 
 

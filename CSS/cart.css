@@ -7,12 +7,12 @@
 }
 /* Chrome, Edge, and Safari */
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Firefox and other browsers */
 html {
-    scrollbar-width: none;
+  scrollbar-width: none;
 }
 body {
   font-family: Arial, sans-serif;
@@ -89,7 +89,6 @@ body {
   font-weight: 600;
   padding: 10px 4px;
   transition: color 0.3s ease;
-
 }
 
 .nav-links li a:hover,
@@ -140,7 +139,6 @@ body {
   background: transparent;
   color: #333333;
   font-size: 14px;
-
 }
 
 .desktop-search input:focus {
@@ -224,7 +222,6 @@ body {
   font-size: 25px;
   cursor: pointer;
   padding: 8px;
-
 }
 
 /* SEARCH BAR STYLING */

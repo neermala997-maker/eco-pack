@@ -40,8 +40,8 @@ body {
   font-family: Arial, sans-serif;
   background: var(--cream);
   color: var(--text);
-  overflow-x: hidden;
-  line-height: 1.5;
+  /* overflow-x: hidden; */
+  /* line-height: 1.5; */
 }
 
 a {
@@ -1898,7 +1898,6 @@ img {
   .footer-box {
     flex: 1 1 100%;
     display: none;
-  
   }
   #contaact-boxx {
     display: inline-block;
