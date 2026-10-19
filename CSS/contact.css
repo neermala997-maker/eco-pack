@@ -10,7 +10,6 @@ body {
   text-align: center;
   background-color: #f3f6ed;
   color: #203c29;
-  /* overflow: hidden; */
 }
 /* Chrome, Edge, and Safari */
 ::-webkit-scrollbar {

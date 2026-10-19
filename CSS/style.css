@@ -1,14 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
-
-/* =========================
-   GLOBAL STYLES
-========================= */
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -21,6 +16,13 @@
   --muted: #68766a;
   --line: #dce6d7;
 }
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f3f6ed;
+  color: #203c29;
+}
+
 /* Chrome, Edge, and Safari */
 ::-webkit-scrollbar {
   display: none;
@@ -34,14 +36,6 @@ html {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: var(--cream);
-  color: var(--text);
-  /* overflow-x: hidden; */
-  /* line-height: 1.5; */
 }
 
 a {
@@ -63,8 +57,6 @@ button {
 img {
   max-width: 100%;
 }
-
-/* NAVBAR CONTAINER & LAYOUT*/
 
 /* NAVBAR CONTAINER & LAYOUT*/
 .navbar {
@@ -609,37 +601,6 @@ img {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.7;
-}
-
-/* FILTER BUTTONS */
-
-#filter-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 28px 0 38px;
-  padding: 0 15px;
-  list-style: none;
-}
-
-#filter-list li {
-  padding: 11px 22px;
-  border: 1px solid #d5e1d0;
-  border-radius: 30px;
-  background: #fff;
-  color: var(--green);
-  font-size: 13px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-#filter-list li:hover,
-#filter-list li.active {
-  transform: translateY(-2px);
-  background: var(--green);
-  color: #fff;
 }
 
 /* GALLERY PRODUCT CARDS */
