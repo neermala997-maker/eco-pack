@@ -1023,6 +1023,12 @@ img {
     #contaact-boxx {
     display: inline-block;
   }
+  .service-section p, h2{
+   font-size: 14px;
+    text-align: center;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
 }
 
 

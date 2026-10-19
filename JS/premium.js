@@ -105,108 +105,108 @@ function handleSearch(event, type) {
   }
 }
 
-// chatnot start
+// // chatnot start
 
-// ECO-PACK Chatbot
+// // ECO-PACK Chatbot
 
-function toggleChat() {
-  let chat = document.getElementById("chat");
-  let logo = document.getElementById("chatbotLogo");
-  let cross = document.getElementById("closeIcon");
-  let button = document.getElementById("chatbotButton");
+// function toggleChat() {
+//   let chat = document.getElementById("chat");
+//   let logo = document.getElementById("chatbotLogo");
+//   let cross = document.getElementById("closeIcon");
+//   let button = document.getElementById("chatbotButton");
 
-  if (chat.style.display === "block") {
-    chat.style.display = "none";
-    logo.style.display = "block";
-    cross.style.display = "none";
-    button.style.backgroundColor = "white";
-    button.setAttribute("aria-label", "Open Eco-Pack chatbot");
-  } else {
-    chat.style.display = "block";
-    logo.style.display = "none";
-    cross.style.display = "block";
-    button.style.backgroundColor = "#2B743C";
-    button.setAttribute("aria-label", "Close Eco-Pack chatbot");
-  }
-}
+//   if (chat.style.display === "block") {
+//     chat.style.display = "none";
+//     logo.style.display = "block";
+//     cross.style.display = "none";
+//     button.style.backgroundColor = "white";
+//     button.setAttribute("aria-label", "Open Eco-Pack chatbot");
+//   } else {
+//     chat.style.display = "block";
+//     logo.style.display = "none";
+//     cross.style.display = "block";
+//     button.style.backgroundColor = "#2B743C";
+//     button.setAttribute("aria-label", "Close Eco-Pack chatbot");
+//   }
+// }
 
-function addChatMessage(message, className) {
-  let messages = document.getElementById("messages");
+// function addChatMessage(message, className) {
+//   let messages = document.getElementById("messages");
 
-  if (!messages) return;
+//   if (!messages) return;
 
-  let paragraph = document.createElement("p");
-  paragraph.className = className;
-  paragraph.textContent = message;
+//   let paragraph = document.createElement("p");
+//   paragraph.className = className;
+//   paragraph.textContent = message;
 
-  messages.appendChild(paragraph);
-  messages.scrollTop = messages.scrollHeight;
-}
+//   messages.appendChild(paragraph);
+//   messages.scrollTop = messages.scrollHeight;
+// }
 
-function getBotReply(message) {
-  message = message.toLowerCase();
+// function getBotReply(message) {
+//   message = message.toLowerCase();
 
-  if (message.includes("price") || message.includes("cost")) {
-    return "🤖 Our prices depend on packaging type, quantity and design.";
-  } else if (message.includes("custom")) {
-    return "🤖 We create personalized packaging based on your business needs and preferences.";
-  } else if (message.includes("event") || message.includes("wedding")) {
-    return "🤖 We provide sustainable packaging for weddings, parties and special occasions.";
-  } else if (message.includes("order")) {
-    return "🤖 For order assistance, please contact our Eco-Pack team.";
-  } else if (message.includes("subscription")) {
-    return "🤖 Our packaging subscription offers regular supplies with flexible plans.";
-  } else if (message.includes("delivery")) {
-    return "🤖 We offer convenient packaging delivery directly to your business.";
-  } else if (message.includes("eco") || message.includes("recycl")) {
-    return "🤖 We offer environmentally friendly packaging made with sustainable and recyclable materials.";
-  } else if (message.includes("hello") || message.includes("hi")) {
-    return "🤖 Hello! Welcome to Eco-Pack. How can I help you?";
-  } else {
-    return "🤖 Thank you for contacting Eco-Pack! Ask me about custom packaging, events, pricing, delivery or orders.";
-  }
-}
+//   if (message.includes("price") || message.includes("cost")) {
+//     return "🤖 Our prices depend on packaging type, quantity and design.";
+//   } else if (message.includes("custom")) {
+//     return "🤖 We create personalized packaging based on your business needs and preferences.";
+//   } else if (message.includes("event") || message.includes("wedding")) {
+//     return "🤖 We provide sustainable packaging for weddings, parties and special occasions.";
+//   } else if (message.includes("order")) {
+//     return "🤖 For order assistance, please contact our Eco-Pack team.";
+//   } else if (message.includes("subscription")) {
+//     return "🤖 Our packaging subscription offers regular supplies with flexible plans.";
+//   } else if (message.includes("delivery")) {
+//     return "🤖 We offer convenient packaging delivery directly to your business.";
+//   } else if (message.includes("eco") || message.includes("recycl")) {
+//     return "🤖 We offer environmentally friendly packaging made with sustainable and recyclable materials.";
+//   } else if (message.includes("hello") || message.includes("hi")) {
+//     return "🤖 Hello! Welcome to Eco-Pack. How can I help you?";
+//   } else {
+//     return "🤖 Thank you for contacting Eco-Pack! Ask me about custom packaging, events, pricing, delivery or orders.";
+//   }
+// }
 
-function sendChatMessage() {
-  let input = document.getElementById("chatInput");
+// function sendChatMessage() {
+//   let input = document.getElementById("chatInput");
 
-  if (!input) return;
+//   if (!input) return;
 
-  let message = input.value.trim();
+//   let message = input.value.trim();
 
-  if (message === "") {
-    alert("Please enter a message");
-    return;
-  }
+//   if (message === "") {
+//     alert("Please enter a message");
+//     return;
+//   }
 
-  addChatMessage("You: " + message, "userMessage");
+//   addChatMessage("You: " + message, "userMessage");
 
-  let answer = getBotReply(message);
-  addChatMessage(answer, "botMessage");
+//   let answer = getBotReply(message);
+//   addChatMessage(answer, "botMessage");
 
-  input.value = "";
-  input.focus();
-}
+//   input.value = "";
+//   input.focus();
+// }
 
-function reply(type) {
-  let answer = "";
+// function reply(type) {
+//   let answer = "";
 
-  if (type === "custom") {
-    answer =
-      "🤖 We create personalized packaging designed for your business needs.";
-  } else if (type === "event") {
-    answer =
-      "🤖 Our event packaging is suitable for weddings, parties and special occasions.";
-  } else if (type === "price") {
-    answer = "🤖 Pricing depends on packaging type, quantity and design.";
-  } else if (type === "order") {
-    answer = "🤖 For order help, please contact our Eco-Pack team.";
-  }
+//   if (type === "custom") {
+//     answer =
+//       "🤖 We create personalized packaging designed for your business needs.";
+//   } else if (type === "event") {
+//     answer =
+//       "🤖 Our event packaging is suitable for weddings, parties and special occasions.";
+//   } else if (type === "price") {
+//     answer = "🤖 Pricing depends on packaging type, quantity and design.";
+//   } else if (type === "order") {
+//     answer = "🤖 For order help, please contact our Eco-Pack team.";
+//   }
 
-  if (answer !== "") {
-    addChatMessage(answer, "botMessage");
-  }
-}
+//   if (answer !== "") {
+//     addChatMessage(answer, "botMessage");
+//   }
+// }
 
 // Send message when Enter is pressed
 

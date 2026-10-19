@@ -1488,6 +1488,69 @@ button:hover {
   }
 }
 
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+  .navbar-container {
+    gap: 45px;
+    justify-content: center;
+  }
+
+  .navbar-logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .navbar-right-actions {
+    gap: 8px;
+  }
+
+  .cart-icon-btn {
+    font-size: 19px;
+    padding: 6px;
+  }
+
+  .navbar-toggler {
+    font-size: 23px;
+    padding: 6px;
+  }
+
+  .nav-menu-wrapper.active {
+    padding: 15px;
+  }
+
+  /* Footer */
+
+  .footer {
+    padding: 35px 6% 0;
+  }
+
+  .footer-container {
+    gap: 25px;
+  }
+
+  .footer-box {
+    flex: 1 1 100%;
+    display: none;
+  }
+  #contaact-boxx {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 26px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+
 /* =========================
    REDUCED MOTION ACCESSIBILITY
 ========================= */

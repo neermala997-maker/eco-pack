@@ -51,7 +51,7 @@
       </div>
 
       <button type="button" class="navbar-toggler" id="navbarToggler" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="navMenuWrapper">
-        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars" style="color: white"></i>
       </button>
     </div>
   </nav>
@@ -101,60 +101,6 @@
   </div>
 
   
-    <!-- chatbot start  -->
-
-    <!-- ECO-PACK CHATBOT BUTTON -->
-    <button
-      id="chatbotButton"
-      onclick="toggleChat()"
-      aria-label="Open Eco-Pack chatbot"
-    >
-      <img src="./Images/logo.jpg" alt="Eco-Pack Logo" id="chatbotLogo" />
-      <span id="closeIcon">×</span>
-    </button>
-
-    <!-- CHATBOT WINDOW -->
-    <div id="chat">
-      <div id="chatTop">
-        <img src="./Images/logo.jpg" alt="Eco-Pack" />
-        <div>
-          <h3>Eco-Pack Assistant</h3>
-          <p>Eco-friendly packaging assistant</p>
-        </div>
-      </div>
-
-      <div id="messages">
-        <p class="botMessage">🤖 Hello! Welcome to Eco-Pack.</p>
-        <p class="botMessage">🤖 How can I help you today?</p>
-
-        <button class="chatOption" onclick="reply('custom')">
-          Custom Packaging
-        </button>
-        <button class="chatOption" onclick="reply('event')">
-          Event Packaging
-        </button>
-        <button class="chatOption" onclick="reply('price')">Pricing</button>
-        <button class="chatOption" onclick="reply('order')">Order Help</button>
-      </div>
-
-      <div id="chatBottom">
-        <input
-          id="chatInput"
-          type="text"
-          placeholder="Type your message..."
-          aria-label="Type your message"
-        />
-        <button
-          id="chatSend"
-          onclick="sendChatMessage()"
-          aria-label="Send message"
-        >
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- chatbot end  -->
 
     <!-- FOOTER START -->
     <footer class="footer">
@@ -197,7 +143,7 @@
         </div>
 
         <!-- Contact Information -->
-        <div class="footer-box">
+        <div class="footer-box" id="contaact-boxx">
           <h3>Contact Us</h3>
 
           <p>Bhutan</p>
@@ -216,5 +162,6 @@
       <script src="./JS/shop.js"></script>
   <script src="./JS/premium.js"></script>
   <script src="./JS/home.js"></script>
+  
 </body>
 </html>

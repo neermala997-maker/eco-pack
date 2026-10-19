@@ -1331,6 +1331,9 @@ span{
     #contaact-boxx {
     display: inline-block;
   }
+  .service-section p, h2{
+  font-size: 11px;
+  }
 }
 
 
